@@ -1,4 +1,5 @@
 import React from "react";
+import Clipboard from "./Clipboard";
 import FoodDetails from "./FoodDetails";
 import Tile from "./Tile";
 
@@ -17,6 +18,7 @@ function OrderHome() {
           <Tile />
           <Tile />
           <Tile />
+          <Clipboard/>
         </div>
       </section>
     </main>

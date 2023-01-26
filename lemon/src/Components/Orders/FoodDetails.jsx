@@ -15,7 +15,7 @@ function FoodDetails() {
       initial={{ x: 100 }}
       animate={{ x: 0 }}
       transition={{ duration: 0.5 }}
-      className="flex flex-col items-center p-10 gap-4 -z-1"
+      className="flex flex-col items-center p-10 gap-4 -z-1 lg:p-20 hidden md:flex"
     >
       <motion.div
         animate={{
@@ -55,7 +55,7 @@ function FoodDetails() {
               }}
             />
 
-            <p className="font-semibold text-[2rem] text-green-400">{qty}</p>
+            <p className="font-semibold text-[2rem] text-black-400">{qty}</p>
             <KeyboardArrowDownIcon
               className="bottom-[-10px] absolute text-gray-600 font-lg cursor-pointer"
               onClick={() => {
@@ -79,14 +79,13 @@ function FoodDetails() {
             <span className="font-semibold">
               {counter} {counter > 1 ? "plates" : "plate"}
             </span>{" "}
-            of this.{" "}
           </p>
         ) : null}
       </div>
 
       <div className="w-full flex justify-between gap-5 items-center">
         <motion.button
-          className="w-1/2 bg-green-500 uppercase border-none rounded 
+          className="w-1/2 bg-black uppercase border-none rounded 
     cursor-pointer h-10 text-white font-semibold active:bg-green-800 hover:bg-green-400"
           onClick={() => {
             setcart(cart + qty);
@@ -101,6 +100,7 @@ function FoodDetails() {
         >
           Cancel
         </button>
+        <button className="btn-primary">test</button>
       </div>
     </motion.div>
   );

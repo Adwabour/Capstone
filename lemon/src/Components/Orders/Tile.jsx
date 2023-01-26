@@ -14,8 +14,8 @@ function Tile() {
       </div>
       <div>
         <button
-          className="w-full bg-[#8bc34a] uppercase border-none rounded 
-  cursor-pointer h-7 text-white active:[#6f9e39] hover:[#97cf56]"
+          className="w-full px-3 bg-[#8bc34a] uppercase border-none rounded 
+  cursor-pointer h-7 text-white active:[#446d15] hover:[#ace768]"
   onClick={()=>console.log('clicked me')}
         >
           Add

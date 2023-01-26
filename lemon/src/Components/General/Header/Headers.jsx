@@ -4,7 +4,7 @@ import Cart from "./Cart";
 
 function Headers() {
   return (
-    <div className="h-[10%] flex justify-between pr-4 items-center  border-solid border-b-1 border-t-0 border-x-0 border-gray-100 w-full">
+    <div className="h-[10%] flex justify-between pr-4 items-center  border-solid border-b-[.5px] border-t-0 border-x-0 border-gray-100 w-full">
       <div className="w-[20%] flex items-center">
         <img
           src="https://img.freepik.com/premium-vector/bow-tie-tuxedo-utensil-restaurant-logo_57043-22.jpg?w=1800"
