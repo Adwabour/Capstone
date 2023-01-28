@@ -1,26 +1,30 @@
 import React from "react";
+import ControlPointOutlinedIcon from "@mui/icons-material/ControlPointOutlined";
+import { IconButton, Tooltip } from "@mui/material";
 
-function Tile() {
+function Tile({ item, setdetailDish }) {
   return (
-    <article className="bg-white rounded w-full p-4 flex flex-col items-center gap-2 shadow-sm">
-      <img
-        src="https://images.unsplash.com/photo-1654155291974-31c746662d34?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1760&q=80"
-        alt="food"
-        className="w-full"
-      />
-      <div className="flex justify-between items-center w-full">
-        <p>Name of food</p>
-        <p>$12.00</p>
+    <article className="bg-white  relative rounded w-full p-4 flex flex-col items-center gap-2 shadow-sm">
+      <div className="w-full flex justify-center items-center">
+        <img
+          src={item.Image}
+          alt="food"
+          className="w-[120px] h-[120px] rounded-full object-cover border-solid-white shadow-sm"
+          lazy
+        />
       </div>
-      <div>
-        <button
-          className="w-full px-3 bg-[#8bc34a] uppercase border-none rounded 
-  cursor-pointer h-7 text-white active:[#446d15] hover:[#ace768]"
-  onClick={()=>console.log('clicked me')}
-        >
-          Add
-        </button>
-      </div>
+      <p className="w-full text-center font-semibold text-gray-600">
+        {item.Name}
+      </p>
+      <p className="text-xs font-light text-gray-400 truncate text-ellipsis w-full">
+        {item.description}
+      </p>
+      <p className="text-gray-500">GHS {item.price}.00</p>
+      <Tooltip title="Order food">
+        <IconButton className="group icon" onClick={() => setdetailDish(item)}>
+          <ControlPointOutlinedIcon className="group-[.icon]:hover:text-green-500 text-gray-200" />
+        </IconButton>
+      </Tooltip>
     </article>
   );
 }

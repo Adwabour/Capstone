@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Badge from "@mui/material/Badge";
 import { styled } from "@mui/material/styles";
 import IconButton from "@mui/material/IconButton";
@@ -17,12 +17,27 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 
 function Cart() {
   const { cart } = useContext(cartContextWrap);
+  const [qty, setqty] = useState(0);
   // animate the badge when the number changes with framermotion
+  useEffect(() => {
+    console.log(cart);
+    const count = cart.map((entries) => {
+      if (entries.orders) {
+        return entries.orders;
+      }
+    });
+    const ss = count.reduce((a, b) => a + b, 0);
+    if (ss) {
+      setqty(ss);
+    }
+  }, [cart]);
+
+  useEffect(() => {}, [qty]);
 
   return (
     <IconButton aria-label="cart">
       <motion.div animate={{ scale: 1 }}>
-        <StyledBadge badgeContent={cart} color="secondary">
+        <StyledBadge badgeContent={qty - 1} color="secondary">
           <ShoppingCartOutlinedIcon />
         </StyledBadge>
       </motion.div>
