@@ -1,6 +1,4 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Sofia+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
-@tailwind base
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
@@ -9,3 +7,11 @@
   box-sizing: border-box;
   font-family: 'Poppins';
 }
+
+@layer components {
+  .btn-primary {
+    @apply py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75;
+  }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Sofia+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
