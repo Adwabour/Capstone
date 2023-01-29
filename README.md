@@ -1,1 +1,1 @@
-# Capstone
+# Table Booking App
