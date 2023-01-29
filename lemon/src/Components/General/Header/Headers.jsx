@@ -1,6 +1,6 @@
 import React from "react";
 import Cart from "./Cart";
-
+import { Link } from "react-router-dom";
 
 function Headers() {
   return (
@@ -16,20 +16,27 @@ function Headers() {
       <div className="flex items-center gap-2">
         <nav>
           <ul className="flex gap-3 list-none">
-            <li className="text-sm text-gray-500 hover:text-green-600 cursor-pointer">Home</li>
-            <li className="text-sm text-gray-500 hover:text-green-600 cursor-pointer">About Us</li>
-            <li className="text-sm text-gray-500 hover:text-green-600 cursor-pointer">Menu</li>
-            <li className="text-sm text-gray-500 hover:text-green-600 cursor-pointer">Reservations</li>
-            <li className="text-sm text-gray-500 hover:text-green-600 cursor-pointer">Profile</li>
+            <li className="text-sm text-gray-500 hover:text-green-600 cursor-pointer">
+            <Link to="/">Home</Link>
+            </li>
+            <li className="text-sm text-gray-500 hover:text-green-600 cursor-pointer">
+              About Us
+            </li>
+            <li className="text-sm text-gray-500 hover:text-green-600 cursor-pointer">
+              <Link to="/menu/">Menu</Link>
+            </li>
+            <li className="text-sm text-gray-500 hover:text-green-600 cursor-pointer">
+              Reservations
+            </li>
+            <li className="text-sm text-gray-500 hover:text-green-600 cursor-pointer">
+              Profile
+            </li>
           </ul>
         </nav>
-        <Cart/>
+        <Cart />
       </div>
     </div>
   );
 }
 
 export default Headers;
-
-
-
