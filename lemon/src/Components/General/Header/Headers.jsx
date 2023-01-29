@@ -26,7 +26,8 @@ function Headers() {
               <Link to="/menu/">Menu</Link>
             </li>
             <li className="text-sm text-gray-500 hover:text-green-600 cursor-pointer">
-              Reservations
+            <Link to="/reservations/">Reservations</Link>
+              
             </li>
             <li className="text-sm text-gray-500 hover:text-green-600 cursor-pointer">
               Profile

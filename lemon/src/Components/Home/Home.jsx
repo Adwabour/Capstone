@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
@@ -14,9 +15,12 @@ function Home() {
             quia.
           </p>
         </article>
-        <button className="my-4 uppercase bg-gray-800 hover:bg-green-600 text-white p-2 rounded-md">
+        <Link
+          to="/reservation/"
+          className="my-4 uppercase bg-gray-800 hover:bg-green-600 text-white p-2 rounded-md"
+        >
           Book a Table
-        </button>
+        </Link>
       </section>
       <section className="w-full h-[60%] flex flex-col gap-10 overflow-hidden">
         <div className="grid grid-cols-3 gap-8 px-[100px] h-[50%] overflow-hidden">
