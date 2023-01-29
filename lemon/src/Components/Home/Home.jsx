@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 function Home() {
   return (
     <div className="h-[90%] w-full ">
-      <section className="h-[40%] w-full pt-8 flex flex-col items-center justify-center">
+      <section className="h-full md:h-[40%] w-full pt-8 flex flex-col items-center justify-center">
         <article className="w-full flex flex-col gap-10 items-center justify-center">
-          <h1 className=" font-bold text-7xl text-gray-700">
+          <h1 className="font-semibold text-xl md:font-bold md:text-7xl text-gray-700">
             Home of Unique taste
           </h1>
-          <p className="w-1/3 text-center text-gray-400 font-light">
+          <p className="w-full px-3 md:w-1/3 text-center text-gray-400 font-light">
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia
             expedita aut dolorem commodi ducimus, vero nisi earum in molestiae
             quia.
@@ -22,7 +22,7 @@ function Home() {
           Book a Table
         </Link>
       </section>
-      <section className="w-full h-[60%] flex flex-col gap-10 overflow-hidden">
+      <section className="hidden w-full h-[60%] md:flex flex-col gap-10 overflow-hidden">
         <div className="grid grid-cols-3 gap-8 px-[100px] h-[50%] overflow-hidden">
           <div className="flex flex-col justify-center items-center relative w-full overflow-hidden rounded-xl shadow-md bg-[url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80')] bg-center bg-cover">
             <div className="bg-[#0909093c] rounded-md p-4 flex flex-col justify-center items-center">

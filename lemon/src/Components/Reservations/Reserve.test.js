@@ -15,12 +15,16 @@ describe("Reserve component", () => {
     // get the name, email and seats fields, and the submit button
     const nameField = getByLabelText("Full name*");
     const emailField = getByLabelText("Email*");
+    const dateField = getByLabelText("Date*");
+    const timeField = getByLabelText("Time*");
     const tableField = getByLabelText("Seats*");
     const submitButton = getByText("Book");
 
     // fill in the form fields
     fireEvent.change(nameField, { target: { value: "John Doe" } });
     fireEvent.change(emailField, { target: { value: "johndoe@example.com" } });
+    fireEvent.change(dateField, { target: { value: "2023-01-07" } });
+    fireEvent.change(timeField, { target: { value: "17:13" } });
     fireEvent.change(tableField, { target: { value: "2" } });
     // submit the form
     fireEvent.click(submitButton);

@@ -13,6 +13,8 @@ const BookingSchema = Yup.object().shape({
     .max(4, "Only 4 Tables left")
     .required("Required"),
   Email: Yup.string().email("Invalid email").required("Required"),
+  Date: Yup.date().required("Required"),
+  Time: Yup.mixed().required("Required"),
 });
 
 function Reserve() {
@@ -29,18 +31,22 @@ function Reserve() {
               Please fill out the form to reserve your seats
             </p>
           </section>
-          <section className="h-[70%] w-1/3">
+          <section className="h-[70%] w-full md:w-1/3">
             <Formik
               initialValues={{
                 Name: "",
                 Table: "",
                 Email: "",
+                Date: "",
+                Time: "",
               }}
               validationSchema={BookingSchema}
-              onSubmit={() => setsubmitted(true)}
+              onSubmit={(val, actions) => {
+                setsubmitted(true);
+              }}
             >
               {({ errors, touched }) => (
-                <Form className="flex flex-col gap-3 bg-gray-100 mt-6 p-6 rounded-md">
+                <Form className="w-full  flex flex-col gap-3 bg-gray-100 mt-6 p-6 rounded-md">
                   <div className="flex flex-col gap-1">
                     <label htmlFor="Name" className="text-sm text-gray-500">
                       Full name*
@@ -68,6 +74,44 @@ function Reserve() {
                         <>{errors.Email}</>
                       ) : null}
                     </p>
+                  </div>
+                  <div className="flex items-top gap-4 justify-between">
+                    <div className="flex flex-col gap-1 w-1/2">
+                      <label htmlFor="Date" className="text-sm text-gray-500">
+                        Date*
+                      </label>
+                      <Field
+                        name="Date"
+                        id="Date"
+                        className="border p-2 rounded-md"
+                        type="date"
+                        min={1}
+                        max={4}
+                      />
+                      <p className="text-xs text-red-500 font-extralight">
+                        {errors.Date && touched.Date ? (
+                          <>{errors.Date}</>
+                        ) : null}
+                      </p>
+                    </div>
+                    <div className="flex flex-col gap-1 w-1/2">
+                      <label htmlFor="Time" className="text-sm text-gray-500">
+                        Time*
+                      </label>
+                      <Field
+                        name="Time"
+                        id="Time"
+                        className="border p-2 rounded-md"
+                        type="time"
+                        min={1}
+                        max={4}
+                      />
+                      <p className="text-xs text-red-500 font-extralight">
+                        {errors.Time && touched.Time ? (
+                          <>{errors.Time}</>
+                        ) : null}
+                      </p>
+                    </div>
                   </div>
                   <div className="flex flex-col gap-1">
                     <label htmlFor="Table" className="text-sm text-gray-500">

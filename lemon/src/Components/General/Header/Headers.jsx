@@ -9,11 +9,11 @@ function Headers() {
         <img
           src="https://img.freepik.com/premium-vector/bow-tie-tuxedo-utensil-restaurant-logo_57043-22.jpg?w=1800"
           alt=""
-          className="w-[40%] h-[80%]"
+          className="w-[40%] h-[80%] hidden md:block"
         />
         <p className="font-bold text-2xl">Little Lemon</p>
       </div>
-      <div className="flex items-center gap-2">
+      <div className="hidden md:flex items-center gap-2">
         <nav>
           <ul className="flex gap-3 list-none">
             <li className="text-sm text-gray-500 hover:text-green-600 cursor-pointer">
@@ -26,7 +26,7 @@ function Headers() {
               <Link to="/menu/">Menu</Link>
             </li>
             <li className="text-sm text-gray-500 hover:text-green-600 cursor-pointer">
-            <Link to="/reservations/">Reservations</Link>
+            <Link to="/reservation/">Reservations</Link>
               
             </li>
             <li className="text-sm text-gray-500 hover:text-green-600 cursor-pointer">
